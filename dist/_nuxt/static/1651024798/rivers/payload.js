@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/rivers", {data:[{slug:"rivers"}],fetch:{},mutations:[]});

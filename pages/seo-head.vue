@@ -16,24 +16,28 @@
     export default {
         data() {
             return {
-                title: 'Hello Nuxters!'
+                title: '12345',
+                mountains: []
             }
         },
         head() {
             return {
-                title: this.title,
+                title: this.mountains.map(o => o.title).join(', '),
                 meta: [
                     {
                         hid: 'description',
                         name: 'description',
-                        content:
-                            'The amazing Nuxt application that teaches me all the cool features of Nuxt'
+                        content: 'The amazing Nuxt application that teaches me all the cool features of Nuxt'
                     }
                 ]
             };
         },
         async asyncData() {
             const mountains = await fetch('https://api.nuxtjs.dev/mountains').then((res) => res.json())
+
+            //console.log('title = ', mountains[0].title);
+            //this.title = mountains[0].title;
+
             return { mountains }
         }
     }

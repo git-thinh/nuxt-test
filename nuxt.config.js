@@ -1,4 +1,11 @@
 ﻿export default {
+    //target: 'static',
+
+    /*
+   ** Set ssr to false to see the loading indicator - https://nuxtjs.org/docs/2.x/features/rendering-modes
+   */
+    ssr: true,
+
     /*
    ** Global CSS - https://nuxtjs.org/docs/2.x/features/configuration#pre-processors
    */
@@ -21,7 +28,7 @@
    */
     head: {
         title: 'Nuxt',
-        titleTemplate: 'My amazing Nuxt application | %s',
+        titleTemplate: 'Test | %s',
         htmlAttrs: {
             lang: 'en',
             amp: true
@@ -130,11 +137,6 @@
     },
 
     /*
-   ** Set ssr to false to see the loading indicator - https://nuxtjs.org/docs/2.x/features/rendering-modes
-   */
-    ssr: false,
-
-    /*
      ** modifying the loading indicator for spa  - https://nuxtjs.org/docs/2.x/features/loading
      */
     //loadingIndicator: {
@@ -142,10 +144,12 @@
     //    color: 'purple',
     //    background: 'green'
     //},
+
     /*
    ** importing a custom loader. this will overwrite the default loader
    */
     loading: '~/components/LoadingBar.vue',
+
     /*
    ** Router property -  https://nuxtjs.org/docs/2.x/features/file-system-routing#the-router-property
    */
@@ -159,8 +163,8 @@
     modules: ['@nuxt/http', '@nuxtjs/style-resources', '@nuxtjs/axios'],
 
     /*
-  ** Plugins - https://nuxtjs.org/docs/2.x/directory-structure/plugins
-  */
+    ** Plugins - https://nuxtjs.org/docs/2.x/directory-structure/plugins
+    */
     plugins: [
         'plugins/nuxt-ready.client.js',
         { src: '~/plugins/client-only.client.js' },
@@ -168,9 +172,10 @@
         '~/plugins/nuxt-api.js',
         '~/plugins/axios.js'
     ],
+
     /*
-   ** Runtime Config
-   */
+    ** Runtime Config
+    */
     publicRuntimeConfig: {
         axios: {
             baseURL: 'https://api.nuxtjs.dev'

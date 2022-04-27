@@ -1,5 +1,9 @@
 ﻿<template>
     <div>
+         <h2>
+            <NuxtLink to="/mountains/x">➡ Click to see axios redirect us</NuxtLink>
+        </h2>
+    
         <h1>Mountains - Lazy Loading Components</h1>
         <LazyMountainsList v-if="show" />
         <button v-if="!show" @click="showList">Show List</button>
@@ -56,36 +60,36 @@
 </template>
 
 <script>
-    export default {
-        async asyncData({ $axios, $config }) {
-            const mountains = await $axios.$get(`/mountains`)
-            //const mountains = await fetch('https://api.nuxtjs.dev/mountains').then((res) => res.json())
-            return {
-                mountains,
-                rendering: process.server ? 'server' : 'client',
-                content: 'Seconds: ' + new Date().getSeconds(),
-                renderedOn: process.client ? 'client' : 'server'
-            };
-        },
-        data() {
-            return {
-                show: false,
-                msg: 'Vue tooltip plugin'
-            }
-        },
-        mounted() {
-            this.$nextTick(() => {
-                this.$nuxt.$loading.start()
-                setTimeout(() => this.$nuxt.$loading.finish(), 5000)
-            })
-        },
-        methods: {
-            showList() {
-                this.show = true
-            },
-            refresh() {
-                this.$nuxt.refresh()
-            }
-        },
-    }
+export default {
+  async asyncData({ $axios, $config }) {
+    const mountains = await $axios.$get(`/mountains`);
+    //const mountains = await fetch('https://api.nuxtjs.dev/mountains').then((res) => res.json())
+    return {
+      mountains,
+      rendering: process.server ? "server" : "client",
+      content: "Seconds: " + new Date().getSeconds(),
+      renderedOn: process.client ? "client" : "server",
+    };
+  },
+  data() {
+    return {
+      show: false,
+      msg: "Vue tooltip plugin",
+    };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 5000);
+    });
+  },
+  methods: {
+    showList() {
+      this.show = true;
+    },
+    refresh() {
+      this.$nuxt.refresh();
+    },
+  },
+};
 </script>

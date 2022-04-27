@@ -1,0 +1,14 @@
+{
+  "LoadingBar": {
+    "description": "Auto imported from components/LoadingBar.vue"
+  },
+  "Mountains": {
+    "description": "Auto imported from components/Mountains.vue"
+  },
+  "MountainsList": {
+    "description": "Auto imported from components/MountainsList.vue"
+  },
+  "SocialHead": {
+    "description": "Auto imported from components/SocialHead.vue"
+  }
+}

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/anonymous-middleware", {data:[{}],fetch:{},mutations:[["analytics\u002Fincrement",void 0]]});

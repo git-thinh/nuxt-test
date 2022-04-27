@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/bounce", {data:[{}],fetch:{},mutations:[]});
